@@ -1,0 +1,119 @@
+.resposta {
+    display: flex;
+    min-width: 500px;
+    width: 80%;
+    height: 100px;
+    margin: 10px;
+    perspective: 1000px;
+}
+
+.conteudoResposta {
+    position: relative;
+    display: flex;
+    flex: 1;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.conteudoResposta.respostaRevelada {
+    transform: rotateY(180deg);
+}
+
+.frente,
+.verso {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.frente {
+    color: #333;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: #fff;
+    align-items: center;
+    gap: 20px;
+}
+
+.verso {
+    transform: rotateY(180deg);
+}
+
+.verso > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 12px;
+}
+
+.certa {
+    background-color: #2BAA6D;
+}
+
+.errada {
+    background-color: #E44A4C;
+}
+
+.certa .valor,
+.errada .valor {
+    font-size: 1.5rem;
+}
+
+.letra {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.valor {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+
+@media (max-width:1280px) {
+    .resposta {
+        height: 60px;
+    }
+
+    .certa .valor,
+    .errada .valor {
+        font-size: 1.2rem;
+    }
+
+    .letra {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width:772px) { 
+    .resposta {
+        min-width: 280px;
+    }
+
+    
+    .certa .valor,
+    .errada .valor {
+        font-size: 1rem;
+    }
+
+    .letra {
+        font-size: 1rem;
+    }
+
+    .valor {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}

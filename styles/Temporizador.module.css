@@ -1,0 +1,62 @@
+.temporizador {
+    display: flex;
+    font-size: 2.5rem;
+    margin: 20px 0px;
+}
+
+@media (max-width:1280px) {
+    .temporizador {
+        display: flex;
+        font-size: 2rem;
+        margin: 20px 0px;
+    }
+
+    .temporizador > div {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .temporizador > div > svg {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+}
+
+@media (max-width:992px) {
+    .temporizador {
+        display: flex;
+        font-size: 2rem;
+        margin: 20px 0px;
+    }
+
+    .temporizador > div {
+        width: 100px !important;
+        height: 100px !important;
+    }
+
+    .temporizador > div > svg {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+}
+
+@media (max-width:772px) {
+    .temporizador {
+        display: flex;
+        font-size: 2rem;
+        margin: 20px 0px;
+    }
+
+    .temporizador > div {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .temporizador > div > svg {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+}

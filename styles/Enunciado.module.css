@@ -1,0 +1,24 @@
+.enunciado {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+@media (max-width:1280px) {
+    .texto {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width:772px) {
+    .texto {
+        width: 80%;
+        font-size: 1.3rem;
+    }
+}

@@ -6,8 +6,8 @@ import Botao from '../components/Botao';
 const Resultado = () => {
     const router = useRouter()
 
-    const total = +router.query.total
-    const certas = +router.query.certas
+    const total = +router.query.total!
+    const certas = +router.query.certas!
     const percentual = Math.round((certas / total) * 100)
     return (
         <div className={styles.resultado}>

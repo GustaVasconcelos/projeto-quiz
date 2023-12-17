@@ -42,7 +42,7 @@ export default function Home() {
     }
     
     const idPraProximaPergunta = () => {
-        const proximoIndice = idsDasQuestoes.indexOf(questao.id) + 1
+        const proximoIndice = idsDasQuestoes.indexOf(questao!.id) + 1
 
         return idsDasQuestoes[proximoIndice]
     }

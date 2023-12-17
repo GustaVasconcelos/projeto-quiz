@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import questoes from '../bancoDeQuestoes';
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-    const idSelecionado = +req.query.id
+    const idSelecionado = +req.query.id!
 
     const unicaQuestaoOuNada = questoes.filter(questao => questao.id === idSelecionado)
 
@@ -14,5 +14,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
         return res.status(200).json(questaoSelecionada.converterParaObjeto());
     }
 
-    return res.status(204).send();
+    return res.status(204).send('Não encontrado');
 }

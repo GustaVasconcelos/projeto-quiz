@@ -12,7 +12,7 @@ const Resultado = () => {
     return (
         <div className={styles.resultado}>
             <h1>Resultado Final</h1>
-            <div style={{ display:'flex'}}>
+            <div style={{ display:'flex', alignItems:'center', justifyContent:'center', flexWrap:"wrap"}}>
                 <Estatistica
                     texto='Perguntas'
                     valor={total}

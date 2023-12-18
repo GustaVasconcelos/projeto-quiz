@@ -1,6 +1,6 @@
 
 import QuestaoModelo from '../model/questao'
-import RespostaModelo from '../model/resposta'
+import axios from 'axios';
 import { useEffect, useState } from 'react'
 import Questionario from '../components/Questionario'
 import { useRouter } from 'next/router'
@@ -16,21 +16,23 @@ export default function Home() {
     const [respostasCertas, setRespostasCertas] = useState<number>(0);
 
     const carregarIdsQuestoes = async () => {
-        const res = await fetch(`${BASE_URL}/questionario`)
-
-        const idsDasQuestoes = await res.json()
-
-        setIdsDasQuestoes(idsDasQuestoes)
+        try {
+            const res = await axios.get(`${BASE_URL}/questionario`);
+            const idsDasQuestoes = res.data;
+            setIdsDasQuestoes(idsDasQuestoes);
+        } catch (error) {
+            console.error('Erro ao carregar IDs das questões:', error);
+        }
     }
-
+    
     const carregarQuestao = async (idQuestao: number) => {
-        const res = await fetch(`${BASE_URL}/questoes/${idQuestao}`)
-
-        const json = await res.json()
-
-        const novaQuestao = QuestaoModelo.criarUsandoObjeto(json)
-        
-        setQuestao(novaQuestao)
+        try {
+            const res = await axios.get(`${BASE_URL}/questoes/${idQuestao}`);
+            const novaQuestao = QuestaoModelo.criarUsandoObjeto(res.data);
+            setQuestao(novaQuestao);
+        } catch (error) {
+            console.error('Erro ao carregar a questão:', error);
+        }
     }
 
     const questaoRespondida = (questaoRespondida: QuestaoModelo) => {
